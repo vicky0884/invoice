@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from new_invoice import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('/new_invoice.html', views.new_invoice_form)
 ]
