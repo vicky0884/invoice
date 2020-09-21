@@ -18,5 +18,6 @@ from django.urls import path
 from new_invoice import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/new_invoice.html', views.new_invoice_form)
+    path('new_invoice.html', views.new_invoice_form),
+    path('pdf_invoice', views.pdf_invoice),
 ]

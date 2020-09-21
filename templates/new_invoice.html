@@ -1,3 +1,99 @@
 <html>
-    <h1>new invoice form page</h1>
+    <head>
+        <title>New Invoice Page</title>
+    </head>
+    <body>
+        <div>
+            <form action="pdf_invoice" method="Post">
+                {% csrf_token %}
+                <div>
+                    Date:<input type="date" name="InvoiceDate"><p></p>
+                    View:
+                    <select name="InvoiceView">
+                        <option value="WithoutImage">Without Image</option>
+                        <option value="WithImage">With Image</option>
+                    </select><p></p>
+                </div>
+                <div>
+                    <input type="text" name="CustName" placeholder="Customer Name"><p></p>
+                    <textarea name="SiteAddress" cols="30" rows="10" placeholder="Site Address"></textarea>
+                </div>
+                <div>
+                    <select name="InvoiceFrom">
+                        <option >Invoice From</option>
+                        <option value="Bright">Bright UPVC Window</option>
+                        <option value="Chandra">Chandra</option>
+                        <option value="Prime">Prime</option>
+                    </select>
+                    <select name="RefBy">
+                        <option >Ref By</option>
+                        <option value="SriLak">Sri Lakshmi</option>
+                        <option value="Builder1">Builder 1</option>
+                        <option value="Builder2">Builder 2</option>
+                    </select><p></p>Option1
+                    <select name="Measurement">
+                        <option >Measurement</option>
+                        <option value="MilliMeter">MM</option>
+                        <option value="CentiMeter">CM</option>
+                        <option value="Feet">Feet</option>
+                        <option value="Inches">Inches</option>
+                    </select>
+                    <select name="WindowColor">
+                        <option>Window Color</option>
+                        <option value="White">White</option>
+                        <option value="Brown">Brown</option>
+                    </select>
+                    <select name="Glass">
+                        <option >Glass</option>
+                        <option value="4mm">4 MM</option>
+                        <option value="8mm">8 MM</option>
+                        <option value="10mm">10 MM</option>
+                    </select>
+                </div>
+                <div>
+                    <table style="width: 100%;">
+                        <tr>
+                            <th>SNO</th>
+                            <th>Window Type</th>
+                            <th>Window Design</th>
+                            <th>Width</th>
+                            <th>Height</th>
+                            <th>Area Sqrt</th>
+                            <th>QTY</th>
+                            <th>Rate / sq ft</th>
+                            <th>Total</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>
+                                <select name="wt" id="">
+                                    <option value="Fixed">Fixed</option>
+                                    <option value="TopOpen">Top Open</option>
+                                </select>
+                            </td>
+                            <td><input name="wd" type="text" placeholder="Desc"></td>
+                            <td><input name="w" type="text"></td>
+                            <td><input name="h" type="text"></td>
+                            <td><input name="area" type="text"></td>
+                            <td><input name="qty" type="text"></td>
+                            <td><input name="rate" type="text" value="250"></td>
+                            </tr>
+                    </table>
+                    <p></p>
+                    <a href="">Add New Line</a><p></p>
+                </div>
+                <div>
+                    Transport Charges:
+                    <input name="tc" type="text"><p></p>
+                    Tax:
+                    <input type="text" name="Tax"><p></p>
+                    Discount:
+                    <input type="text" name="Discount"><p></p>
+                    Round off:
+                    <input type="text" name="Roundoff"><p></p>
+                </div>
+                <input type="submit" value="Create PDF">
+            </form>
+        </div>
+    </body>
 </html>
